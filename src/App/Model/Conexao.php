@@ -1,6 +1,6 @@
 <?php
 
-namespace TesourariaBaba\App\Model;
+namespace Sidne\TesourariaBaba\App\Model;
 
 abstract class Conexao
 {

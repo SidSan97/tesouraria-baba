@@ -1,0 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.botao {
+
+    margin-left: 13px;
+    width: 100px !important;
+}

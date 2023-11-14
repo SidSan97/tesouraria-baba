@@ -2,7 +2,7 @@
     "name": "sidne/tesouraria-baba",
     "autoload": {
         "psr-4": {
-            "TesourariaBaba\\": "src/"
+            "Sidne\\TesourariaBaba\\": "src/"
         }
     },
     "authors": [

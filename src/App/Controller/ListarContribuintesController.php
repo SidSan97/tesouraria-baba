@@ -6,10 +6,10 @@ use Sidne\TesourariaBaba\App\Model\ListarContribuintesModel;
 
 class ListarContribuintesController {
 
-    public function listagemContribuintes($request) {
+    public function listagemContribuintes() {
 
         $result = new ListarContribuintesModel;
-        $var    = $result->pegarDados($request);
+        $var    = $result->pegarDados();
 
         return $var;
     }

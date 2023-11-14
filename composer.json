@@ -1,0 +1,15 @@
+{
+    "name": "sidne/tesouraria-baba",
+    "autoload": {
+        "psr-4": {
+            "TesourariaBaba\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "SidSan97",
+            "email": "sidnei1.8santiago@hotmail.com"
+        }
+    ],
+    "require": {}
+}

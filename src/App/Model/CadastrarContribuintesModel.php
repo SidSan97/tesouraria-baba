@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 namespace Sidne\TesourariaBaba\App\Model;
 
@@ -11,7 +11,6 @@ class CadastrarContribuintesModel extends Conexao{
     private $mes;
 
     public function cadastrarContribuinte($request) {
-
         $meses = [
             1 => 'Janeiro',
             2 => 'Fevereiro',
@@ -32,6 +31,7 @@ class CadastrarContribuintesModel extends Conexao{
         $this->valor_pago     = $request['valor_pago'];
         $this->data_pagamento = $request['data_pagamento'];
         $this->mes = $meses[date('m')];
+        $id = 0;
 
         $stmt = $this->connect()->prepare('INSERT INTO contribuintes VALUES (?, ?, ?, ?, ?, ?)');
 

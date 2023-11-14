@@ -1,16 +1,14 @@
-<?php 
+<?php
 
-namespace Sidne\TesourariaBaba\App\Contoller;
+namespace Sidne\TesourariaBaba\App\Controller;
 
 use Sidne\TesourariaBaba\App\Model\CadastrarContribuintesModel;
 
 class CadastrarContribuintesController {
 
     public function cadastroContribuinte($request) {
-        
-        $cad    = new CadastrarContribuintesModel;
-        $result = $cad->cadastrarContribuinte($request);
 
-        return $result;
+        $cad = new CadastrarContribuintesModel;
+        $cad->cadastrarContribuinte($request);
     }
 }

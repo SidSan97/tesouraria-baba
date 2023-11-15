@@ -1,10 +1,12 @@
 <?php
     namespace Sidne\TesourariaBaba\App\View;
 
+    use DateTime;
     use Sidne\TesourariaBaba\App\Controller\ListarContribuintesController;
+    require 'vendor/autoload.php';
 
     $lista = new ListarContribuintesController;
-    $var   = $lista->listagemContribuintes();
+    $dados = $lista->listagemContribuintes();
 ?>
 
 <!DOCTYPE html>
@@ -49,15 +51,27 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Nome</th>
-                        <th scope="col">Nível</th>
+                        <th scope="col">Situação</th>
                         <th scope="col">Valor pago</th>
                         <th scope="col">Data do pagamento</th>
-                        <th scope="col">Mês</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php
-                        foreach($lista as $dados):
+                    <?php                   
+                        for($i=0; $i<sizeof($dados); $i++):
+                            $dataDoBanco = $dados[$i]['data_pagamento'];
+                            $dataFormatada = new DateTime($dataDoBanco);
+                            $dataFormatada = $dataFormatada->format('d/m/Y H:i:s');
+                    ?>
+                     <tr>
+                        <th scope="row"><?= $i+1 ?></th>
+                        <td><?= $dados[$i]['nome'] ?></td>
+                        <td><?= $dados[$i]['nivel'] ?></td>
+                        <td>R$ <?= $dados[$i]['valor_pago'] ?></td>
+                        <td><?= $dataFormatada ?></td>
+                    </tr>
+                    <?php 
+                        endfor;
                     ?>
                 </tbody>
             </table>

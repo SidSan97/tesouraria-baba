@@ -9,6 +9,7 @@ class CadastrarContribuintesModel extends Conexao{
     private $valor_pago;
     private $data_pagamento;
     private $mes;
+    private $ano;
 
     public function cadastrarContribuinte($request) {
         $meses = [
@@ -31,9 +32,10 @@ class CadastrarContribuintesModel extends Conexao{
         $this->valor_pago     = $request['valor_pago'];
         $this->data_pagamento = $request['data_pagamento'];
         $this->mes = $meses[date('m')];
+        $this->ano = date('Y');
         $id = 0;
 
-        $stmt = $this->connect()->prepare('INSERT INTO contribuintes VALUES (?, ?, ?, ?, ?, ?)');
+        $stmt = $this->connect()->prepare('INSERT INTO contribuintes VALUES (?, ?, ?, ?, ?, ?, ?)');
 
             $stmt->bindParam(1, $id, \PDO::PARAM_INT);
             $stmt->bindParam(2, $this->nome, \PDO::PARAM_STR);
@@ -41,6 +43,7 @@ class CadastrarContribuintesModel extends Conexao{
             $stmt->bindParam(4, $this->valor_pago, \PDO::PARAM_STR);
             $stmt->bindParam(5, $this->data_pagamento, \PDO::PARAM_STR);
             $stmt->bindParam(6, $this->mes, \PDO::PARAM_STR);
+            $stmt->bindParam(7, $this->ano, \PDO::PARAM_INT);
 
             if ($stmt->execute()) {
                 echo 'criou';

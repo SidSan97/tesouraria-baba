@@ -10,6 +10,7 @@ class ListarContribuintesController {
 
         $result = new ListarContribuintesModel;
         $var    = $result->pegarDados();
+        //echo $var[1]['nome'];
 
         return $var;
     }

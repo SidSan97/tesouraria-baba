@@ -46,9 +46,9 @@ class CadastrarContribuintesModel extends Conexao{
             $stmt->bindParam(7, $this->ano, \PDO::PARAM_INT);
 
             if ($stmt->execute()) {
-                echo 'criou';
+                return true;
             }
             else 
-                echo 'n criou';
+                return false;
     }
 }

@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.legenda {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(68, 68, 68);
+}
+
+.botoes button{
+    width: 188px ;
+}

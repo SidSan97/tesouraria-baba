@@ -2,11 +2,11 @@
 
 namespace Sidne\TesourariaBaba\App\Controller;
 
-use Sidne\TesourariaBaba\App\Model\ListarContribuintesModel;
+use Sidne\TesourariaBaba\App\Model\ListarDespesasModel;
 
-class ListarContribuintesController {
+class ListarDespesasController {
 
-    public function listagemContribuintes($request) {
+    public function listagemDespesas($request) {
 
         $meses = [
             1 => 'Janeiro',
@@ -31,7 +31,7 @@ class ListarContribuintesController {
             ];
         }
        
-        $result = new ListarContribuintesModel;
+        $result = new ListarDespesasModel;
         $var    = $result->pegarDados($request);
 
         return $var;

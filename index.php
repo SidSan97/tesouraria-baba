@@ -102,7 +102,7 @@
 
             <div class="col-4">
                 <span>Total de despesas no mês: </span>
-                <br> <h5 class="text-danger">R$ <?=$dados['total_despesas'][0]['valor_despesa']?></h5>
+                <br> <h5 class="text-danger">R$ <?=$dados['total_despesas'][0]['valor_despesa'] == '' ? 0 : $dados['total_despesas'][0]['valor_despesa'] ?></h5>
             </div>
 
             <div class="col-4">

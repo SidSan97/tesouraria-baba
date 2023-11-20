@@ -10,5 +10,21 @@
 }
 
 .botoes button{
-    width: 188px ;
+    width: 200px ;
+}
+
+.table-contribuintes {
+    min-width: 508px !important;
+}
+
+.table-contribuintes>tbody>tr>td {
+    text-align: center;
+}
+
+.table-contribuintes>thead>tr>th{
+    text-align: center;
+}
+
+.nome {
+    text-align: left !important;
 }

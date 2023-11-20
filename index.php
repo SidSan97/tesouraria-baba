@@ -70,6 +70,8 @@
                 <button type="submit" class="btn btn-primary botao">Buscar</button>
             </form>
         </div>
+        
+        <hr>
 
         <div class="row botoes mb-3">
             <div class="col-md-4 mb-2">
@@ -96,12 +98,12 @@
         <?php if($dados['dados'] !== null): ?>    
         <div class="row informacoes mb-2">
             <div class="col-4">
-                <span>Total arrecadado no mês:</span>
+                <span>Arrecadação do mês:</span>
                 <br> <h5 class="text-success">R$ <?=$dados['total_pago'][0]['total_pago']?></h5>
             </div>
 
             <div class="col-4">
-                <span>Total de despesas no mês: </span>
+                <span>Despesas do mês: </span>
                 <br> <h5 class="text-danger">R$ <?=$dados['total_despesas'][0]['valor_despesa'] == '' ? 0 : $dados['total_despesas'][0]['valor_despesa'] ?></h5>
             </div>
 
@@ -112,11 +114,11 @@
         </div>
 
         <div class="table-responsive-md">
-            <table class="table table-striped table-hover ">
+            <table class="table table-striped table-hover table-contribuintes">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Nome</th>
+                        <th scope="col" class="nome">#</th>
+                        <th scope="col" class="nome">Nome</th>
                         <th scope="col">Situação</th>
                         <th scope="col">Valor pago</th>
                         <th scope="col">Data do pagamento</th>
@@ -127,11 +129,11 @@
                         for($i=0; $i<sizeof($dados['dados']); $i++):
                             $dataDoBanco = $dados['dados'][$i]['data_pagamento'];
                             $dataFormatada = new DateTime($dataDoBanco);
-                            $dataFormatada = $dataFormatada->format('d/m/Y H:i:s');
+                            $dataFormatada = $dataFormatada->format('d/m/y');
                     ?>
                     <tr>
                         <th scope="row"><?= $i+1 ?></th>
-                        <td><?= $dados['dados'][$i]['nome'] ?></td>
+                        <td class="nome"><?= $dados['dados'][$i]['nome'] ?></td>
                         <td>
                             <?php
                                 if($dados['dados'][$i]['nivel'] == "Mensalista")

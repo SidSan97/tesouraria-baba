@@ -37,7 +37,7 @@
     <div class="container">
         <h1 align="center" class="mb-4 mt-3">Administração de finanças do baba</h1>
 
-        <h5 class="mb-3">Lista referente ao mês de <?=$meses[date('m')-1]?></h5>
+        <h5 class="mb-3">Lista referente ao mês de <?= isset($_GET['q']) ? $dados['dados'][0]['mes'] : $meses[date('m')-1]?></h5>
 
         <div class="row mb-4">
             <form action="index.php?q=listarPorMes" method="post">

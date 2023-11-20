@@ -1,3 +1,6 @@
+<?php 
+    $meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -17,7 +20,7 @@
         <form class="row g-3 mb-3" action="../../../routes/web.php?q=cadastrarContribuinte" method="POST">
             <div class="col-md-6">
                 <label for="inputEmail4" class="form-label">Qual nome do contribuidor?</label>
-                <input type="text" name="nome" class="form-control" id="inputEmail4">
+                <input type="text" name="nome" class="form-control" id="inputEmail4" required>
             </div>
 
             <div class="col-md-6">
@@ -31,15 +34,36 @@
             
             <div class="col-md-6">
                 <label for="inputEmail4" class="form-label">Valor Pago</label>
-                <input type="number" name="valor_pago" class="form-control" id="inputEmail4">
+                <input type="number" name="valor_pago" class="form-control" id="inputEmail4" required>
             </div>
             
             <div class="col-md-6">
                 <label for="inputPassword4" class="form-label">Data do pagamento</label>
-                <input type="datetime-local" class="form-control" name="data_pagamento" id="inputPassword4">
+                <input type="date" class="form-control" name="data_pagamento" id="inputPassword4" required>
             </div>
 
-            <button type="submit" class="btn btn-success botao">Enviar</button>
+            <div class="col-md-6">
+                <label for="selectMes" class="mb-2 legenda"> Selecione o mês referente ao pagamento</label>
+                <select id="selectMes" class="form-select mb-3" name="mes" aria-label="Default select example" required>
+                    <option value="<?=$meses[date('m')-1]?>"><?=$meses[date('m')-1]?></option>
+                    <option value="Janeiro">Janeiro</option>
+                    <option value="Fevereiro">Fevereiro</option>
+                    <option value="Marco">Março</option>
+                    <option value="Abril">Abril</option>
+                    <option value="Maio">Maio</option>
+                    <option value="Junho">Junho</option>
+                    <option value="Julho">Julho</option>
+                    <option value="Agosto">Agosto</option>
+                    <option value="Setembro">Setembro</option>
+                    <option value="Outubro">Outubro</option>
+                    <option value="Novembro">Novembro</option>
+                    <option value="Dezembro">Dezembro</option>
+                </select>
+            </div>
+
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-success botao">Enviar</button>
+            </div>
         </form>
 
         <button type="button" class="btn btn-primary botao"><a class="nav-link text-light" href="../../../index.php">Voltar</a></button>

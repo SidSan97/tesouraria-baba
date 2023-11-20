@@ -31,7 +31,7 @@ class CadastrarContribuintesModel extends Conexao{
         $this->nivel = $request['nivel'];
         $this->valor_pago     = $request['valor_pago'];
         $this->data_pagamento = $request['data_pagamento'];
-        $this->mes = $meses[date('m')];
+        $this->mes = $request['mes'];
         $this->ano = date('Y');
         $id = 0;
 

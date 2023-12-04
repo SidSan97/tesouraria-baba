@@ -17,6 +17,8 @@
 
         $listaDespesa = new ListarDespesasController;
         $desp = $listaDespesa->listagemDespesas(null);
+
+        $total = $listaDespesa->pegarTotalEmCaixa();
     }
 
     $meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
@@ -109,7 +111,8 @@
 
             <div class="col-4">
                 <span>Valor total em caixa: </span>
-                <br> <h5 class="text-success">R$ <?=($dados['total_pago'][0]['total_pago']) - ($dados['total_despesas'][0]['valor_despesa'])?></h5>
+                <br> 
+                <h5 class="text-success">R$ <?= $total ?></h5>
             </div>
         </div>
 

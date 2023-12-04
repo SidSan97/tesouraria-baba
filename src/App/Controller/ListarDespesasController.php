@@ -36,4 +36,12 @@ class ListarDespesasController {
 
         return $var;
     }
+
+    public function pegarTotalEmCaixa()
+    {
+        $result = new ListarDespesasModel;
+        $total = $result->calcularTotalEmCaixa();
+
+        return $total;
+    }
 }

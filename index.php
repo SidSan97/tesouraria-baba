@@ -112,7 +112,7 @@
             <div class="col-4">
                 <span>Valor total em caixa: </span>
                 <br> 
-                <h5 class="text-success">R$ <?= $total ?></h5>
+                <h5 class="text-success">R$ <?= isset($total) ? $total : '' ?></h5>
             </div>
         </div>
 

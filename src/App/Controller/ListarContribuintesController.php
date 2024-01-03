@@ -26,7 +26,7 @@ class ListarContribuintesController {
         if(!isset($_REQUEST['ano']) and !isset($_REQUEST['mes'])) {
             
             $request = [
-                'mes' => $meses[date('m')],
+                'mes' => $meses[date('n')],
                 'ano' => date('Y')
             ];
         }

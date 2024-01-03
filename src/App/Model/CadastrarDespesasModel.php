@@ -29,7 +29,7 @@ class CadastrarDespesasModel extends Conexao{
         $this->descricao  = $request['descricao'];
         $this->data       = $request['data'];
         $this->valor      = $request['valor'];
-        $this->mes = $meses[date('m')];
+        $this->mes = $meses[date('n')];
         $this->ano = date('Y');
         $id = 0;
 
